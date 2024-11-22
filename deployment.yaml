@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rapidfort-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rapidfort
+  template:
+    metadata:
+      labels:
+        app: rapidfort
+    spec:
+      containers:
+        - name: rapidfort
+          image: yourdockerhubusername/rapidfort:latest
+          ports:
+            - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rapidfort-service
+spec:
+  selector:
+    app: rapidfort
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: LoadBalancer
