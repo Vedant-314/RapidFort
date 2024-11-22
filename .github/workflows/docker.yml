@@ -27,8 +27,8 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build -t yourdockerhubusername/flask-docx-to-pdf .
-        docker push yourdockerhubusername/flask-docx-to-pdf
+        docker build -t vedanttaak/rapidfort .
+        docker push vedanttaak/rapidfort
 
     - name: Logout from DockerHub
       run: docker logout

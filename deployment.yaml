@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: rapidfort
-          image: yourdockerhubusername/rapidfort:latest
+          image: vedanttaak/rapidfort:latest
           ports:
             - containerPort: 5000
 ---
